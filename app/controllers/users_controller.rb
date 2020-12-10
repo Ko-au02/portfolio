@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def index
-    @user = User.find_by(id: session[:user_id])
+    @user = User.find_by(id: params[:id])
   end
 
   def new
@@ -46,9 +46,7 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user = User.find_by(id: params[:id])
-    @user.destroy
-    redirect_to("/users/index")
+  
   end
 
   def login_form
@@ -69,7 +67,7 @@ class UsersController < ApplicationController
   def logout
     session[:user_id] = nil
     flash[:notice] = "ログアウトしました"
-    redirect_to("/")
+    redirect_to("/login")
   end
 
 end

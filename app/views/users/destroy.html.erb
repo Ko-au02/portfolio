@@ -1,0 +1,10 @@
+<div class="main user-destroy">
+  <div class="container">
+    <h2>本当に退会しますか？</h2>
+
+    <%= form_tag("/users/destroy") do %>
+      <input type="submit" valuse="はい">
+    <% end %>
+    <%= link_to("いいえ","/posts/index")  %>
+  </div>
+</div>

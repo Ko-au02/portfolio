@@ -9,13 +9,13 @@ Rails.application.routes.draw do
   get "posts/:id/destroy" => "posts#destroy"
 
 
-  get "users/index" => "users#index"
+
   get "users/new" => "users#new"
   get "users/:id" => "users#index"
   get "users/:id/edit" => "users#edit"
   post "users/create" => "users#create"
   post "users/:id/update" => "users#update"
-  post "users/destroy" => "users#destroy"
+  get "users/destroy" => "users#destroy"
 
   get "login" => "users#login_form"
   post "user_login" => "users#login"
